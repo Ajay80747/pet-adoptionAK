@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Adoption Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <h1>Welcome to Ajaykumar's Pet Pals 🐶🐱</h1>
+  <h2>Find your new best friend or donate to help animals!</h2>
+
+  <div class="container">
+    <a href="adopt.html"><button>Adopt a Pet</button></a>
+    <a href="volunteer.html"><button>Volunteer</button></a>
+    <a href="login.html"><button>Login</button></a>
+    <a href="endangered.html"><button>Endangered Animals Awareness</button></a>
+    <a href="donate.html"><button class="donate-btn">Support Us Donate Now 💖</button></a>
+    <a href="about.html"><button>About Us</button></a>
+    <a href="contact.html"><button>Contact Us</button></a>
+  </div>
+
+  <div class="featured-pets">
+    <h3>Featured Pets</h3>
+    {% if featured_pets %}
+      {% for pet in featured_pets %}
+        <div class="pet-card">
+          <img src="cat1.jpg" alt="cattyyy" class="small-cat">
+          <h4>cattyyy</h4>
+          <p>Species - Breed, Age: </p>
+          <p>Adopted by: </p>
+          <a href="adopt.html"><button>Adopt Me!</button></a>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No pets available at the moment.</p>
+    {% endif %}
+  </div>
+
+  <div class="container">
+    <h2>Our Mission</h2>
+    <p>At Pet Pals, we are dedicated to finding loving homes for pets in need and supporting animal welfare through donations and community involvement.</p>
+
+    <h2>Get Involved</h2> 
+    <p>Join us in our mission to help animals find their forever homes. Whether you want to adopt, donate, or volunteer, your support makes a difference!</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions or want to get involved, please reach out to us at 
+      <a href="mailto:ajaykumargorakanti3@gmail.com">ajaykumargorakanti3@gmail.com</a>. We would love to hear from you!
+    </p>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 Pet Pals. All rights reserved. | Designed by Ajaykumar Gorakanti</p>
+  </div>
+</body>
+</html>

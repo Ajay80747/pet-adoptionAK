@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate for Animals</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🐶🐱 Welcome to Pet Pals</h1>
+    <h2>💖 Support Animal Welfare</h2>
+
+    <form id="donationForm">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="number" name="amount" placeholder="Donation Amount (INR)" required />
+      <button type="submit">Donate Now</button>
+    </form>
+
+    <a href="/"><button type="button">← Back to Home</button></a>
+
+    <div class="footer">
+      <p>&copy; 2025 Pet Pals. All rights reserved. | Designed by Ajaykumar Gorakanti</p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("donationForm");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch("/donate", {
+        method: "POST",
+        body: formData,
+      })
+      .then(response => {
+        if (response.ok) {
+          // 🎉 Confetti animation
+          confetti({
+            particleCount: 200,
+            spread: 120,
+            origin: { y: 0.6 }
+          });
+
+          // Wait 2 seconds then redirect
+          setTimeout(() => {
+            window.location.href = "/thankyou";
+          }, 2000);
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("Error submitting donation.");
+      });
+    });
+  </script>
+</body>
+</html>

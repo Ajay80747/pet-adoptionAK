@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer with Pet Pals</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Volunteer with Pet Pals 🐾</h1>
+    <p>Join our team and make a difference in the lives of animals. Fill out the form below to become a volunteer.</p>
+
+    <form action="/volunteer" method="POST">
+      <input type="text" name="name" placeholder="Your Full Name" required>
+      <input type="email" name="email" placeholder="Your Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+    <label for="availability">Availability</label>
+    <select id="availability" name="availability" required>
+      <option value="">Select Availability</option>
+      <option value="Weekdays">Weekdays</option>
+      <option value="Weekends">Weekends</option>
+      <option value="Flexible">Flexible</option>
+    </select>
+      <textarea name="message" rows="5" placeholder="Why do you want to volunteer?" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+    <a href="index.html"><button>Back to Home</button></a>
+  </div>
+</body>
+</html>
